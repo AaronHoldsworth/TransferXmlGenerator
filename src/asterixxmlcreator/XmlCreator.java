@@ -12,6 +12,8 @@ import java.util.Date;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JProgressBar;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -35,6 +37,7 @@ public class XmlCreator {
     static Element bookings;
     static Document doc;
     static String directoryName;
+    static JProgressBar _prog;
 
     static void CreateXml(ArrayList<AsterixBlock> asterixList, String SourceMarket, String FileName, JButton button, JProgressBar prog) {
 
@@ -45,9 +48,23 @@ public class XmlCreator {
         _fileName = SourceMarket + fileNameDate.format(new Date()) + "-001.xml";
         _creationDate = creationDateFormat.format(new Date());
         _creationTime = creationTimeFormat.format(new Date());
-        
+
         directoryName = FileName;
+
+        _prog = prog;
+        _prog.setMinimum(0);
+        _prog.setMaximum(asterixList.size());
         
+        _prog.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent evt) {
+                JProgressBar comp = (JProgressBar) evt.getSource();
+                int value = comp.getValue();
+                int min = comp.getMinimum();
+                int max = comp.getMaximum();
+            }
+        });
+
         StartXml();
         CreateAsterixBlock(asterixList);
         CreateXmlFile();
@@ -91,7 +108,8 @@ public class XmlCreator {
 
     private static void CreateAsterixBlock(ArrayList<AsterixBlock> asterixList) {
 
-        asterixList.forEach((_item) -> {
+        int count = 0;
+        for (AsterixBlock _item : asterixList) {
 
             Element booking = doc.createElement("booking");
             bookings.appendChild(booking);
@@ -179,7 +197,10 @@ public class XmlCreator {
                 paxAge.appendChild(doc.createTextNode(_passenger.paxAge));
                 pax.appendChild(paxAge);
             });
-        });
+            count++;
+            _prog.setValue(count);
+
+        };
 
     }
 
@@ -187,13 +208,13 @@ public class XmlCreator {
 
         try {
 
-            
             File directory = new File(directoryName);
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);
-            if (!directory.exists())
+            if (!directory.exists()) {
                 directory.mkdir();
+            }
 
             StreamResult result = new StreamResult(new File(directoryName + _fileName));
 
