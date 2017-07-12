@@ -65,8 +65,9 @@ public class AsterixDetailsWindow extends javax.swing.JFrame {
         txtFlightNumber = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         btnSaveLocation = new javax.swing.JButton();
-        lblDirectory = new javax.swing.JLabel();
         txtFlightTime = new javax.swing.JTextField();
+        JScrollPane1 = new javax.swing.JScrollPane();
+        txtDirectory = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Transfer File Generator");
@@ -114,81 +115,93 @@ public class AsterixDetailsWindow extends javax.swing.JFrame {
             }
         });
 
-        lblDirectory.setText("C:\\AsterixFiles\\");
+        JScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        JScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        JScrollPane1.setEnabled(false);
+
+        txtDirectory.setColumns(20);
+        txtDirectory.setLineWrap(true);
+        txtDirectory.setRows(5);
+        txtDirectory.setText("C:\\AsterixFiles\\");
+            txtDirectory.setEnabled(false);
+            JScrollPane1.setViewportView(txtDirectory);
 
             javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
             getContentPane().setLayout(layout);
             layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(95, 95, 95)
+                                    .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(10, 10, 10)
+                                    .addComponent(jLabel10)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(progDataCreation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(10, 10, 10)
+                                    .addComponent(jLabel11)
+                                    .addGap(25, 25, 25)
+                                    .addComponent(progFileCreation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(10, 10, 10)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel4)
+                                                .addComponent(jLabel8)
+                                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(lblFlightCarrier, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jLabel9)
+                                                .addComponent(jLabel3)
+                                                .addComponent(jLabel7)
+                                                .addComponent(jLabel6)))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(10, 10, 10)
+                                            .addComponent(jLabel5))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addContainerGap()
+                                            .addComponent(jLabel2))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addContainerGap()
+                                            .addComponent(jLabel1)))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(datepickEnd, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                                        .addComponent(txtNumBookings)
+                                        .addComponent(txtSourceMarket, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(txtDest)
+                                        .addComponent(txtHotelLdi)
+                                        .addComponent(txtHotelName)
+                                        .addComponent(txtFlightNumber)
+                                        .addComponent(txtFlightTime)
+                                        .addComponent(txtNumChildren)
+                                        .addComponent(txtNumPax)
+                                        .addComponent(txtFlightCarrier, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(txtBookingIdStart))))
+                            .addGap(0, 0, Short.MAX_VALUE))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(10, 10, 10)
                             .addComponent(btnSaveLocation)
                             .addGap(18, 18, 18)
-                            .addComponent(lblDirectory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(95, 95, 95)
-                            .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(10, 10, 10)
-                            .addComponent(jLabel10)
-                            .addGap(18, 18, 18)
-                            .addComponent(progDataCreation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(10, 10, 10)
-                            .addComponent(jLabel11)
-                            .addGap(25, 25, 25)
-                            .addComponent(progFileCreation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(10, 10, 10)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel4)
-                                        .addComponent(jLabel8)
-                                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lblFlightCarrier, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel9)
-                                        .addComponent(jLabel3)
-                                        .addComponent(jLabel7)
-                                        .addComponent(jLabel6)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(10, 10, 10)
-                                    .addComponent(jLabel5))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addContainerGap()
-                                    .addComponent(jLabel2))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addContainerGap()
-                                    .addComponent(jLabel1)))
-                            .addGap(18, 18, 18)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(datepickEnd, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-                                .addComponent(txtNumBookings)
-                                .addComponent(txtSourceMarket, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(txtDest)
-                                .addComponent(txtHotelLdi)
-                                .addComponent(txtHotelName)
-                                .addComponent(txtFlightNumber)
-                                .addComponent(txtFlightTime)
-                                .addComponent(txtNumChildren)
-                                .addComponent(txtNumPax)
-                                .addComponent(txtFlightCarrier, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(txtBookingIdStart))))
-                    .addContainerGap(40, Short.MAX_VALUE))
+                            .addComponent(JScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)))
+                    .addContainerGap())
             );
             layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btnSaveLocation)
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(4, 4, 4)
-                            .addComponent(lblDirectory)))
-                    .addGap(18, 18, 18)
+                            .addComponent(btnSaveLocation)
+                            .addGap(0, 31, Short.MAX_VALUE))
+                        .addComponent(JScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel1)
                         .addComponent(txtBookingIdStart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -196,7 +209,7 @@ public class AsterixDetailsWindow extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtNumBookings, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel2))
-                    .addGap(11, 11, 11)
+                    .addGap(15, 15, 15)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel6)
                         .addComponent(txtSourceMarket, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -268,7 +281,7 @@ public class AsterixDetailsWindow extends javax.swing.JFrame {
                             .addGap(8, 8, 8)
                             .addComponent(jLabel11))
                         .addComponent(progFileCreation, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(26, Short.MAX_VALUE))
+                    .addContainerGap())
             );
 
             pack();
@@ -331,7 +344,7 @@ public class AsterixDetailsWindow extends javax.swing.JFrame {
                         progDataCreation.setValue(count);
                     }
 
-                    XmlCreator.CreateXml(asterixList, txtSourceMarket.getText(), lblDirectory.getText(), btnCreate, progFileCreation);
+                    XmlCreator.CreateXml(asterixList, txtSourceMarket.getText(), txtDirectory.getText(), btnCreate, progFileCreation);
                 } catch (NumberFormatException | ParseException e) {
                     JOptionPane.showMessageDialog(null, e.getMessage(), "Exception Thrown", JOptionPane.ERROR_MESSAGE);
                 }
@@ -339,11 +352,13 @@ public class AsterixDetailsWindow extends javax.swing.JFrame {
 
             new Thread(r).start();
         }
+        int newBookingStart = Integer.parseInt(txtBookingIdStart.getText()) + Integer.parseInt(txtNumBookings.getText());
+        txtBookingIdStart.setText(Integer.toString(newBookingStart));
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void btnSaveLocationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveLocationActionPerformed
         JFileChooser directoryBrowser = new JFileChooser();
-        directoryBrowser.setCurrentDirectory(new java.io.File(lblDirectory.getText()));
+        directoryBrowser.setCurrentDirectory(new java.io.File(txtDirectory.getText()));
         directoryBrowser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         //
         // disable the "All files" option.
@@ -351,7 +366,7 @@ public class AsterixDetailsWindow extends javax.swing.JFrame {
         directoryBrowser.setAcceptAllFileFilterUsed(false);
         //    
         if (directoryBrowser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
-            lblDirectory.setText(directoryBrowser.getCurrentDirectory().toString());
+            txtDirectory.setText(directoryBrowser.getSelectedFile().toString());
         }
     }//GEN-LAST:event_btnSaveLocationActionPerformed
 
@@ -403,6 +418,7 @@ public static void main(String args[]) {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane JScrollPane1;
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnSaveLocation;
     private com.github.lgooddatepicker.components.DatePicker datepickEnd;
@@ -419,12 +435,12 @@ public static void main(String args[]) {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel lblDirectory;
     private javax.swing.JLabel lblFlightCarrier;
     private javax.swing.JProgressBar progDataCreation;
     private javax.swing.JProgressBar progFileCreation;
     private javax.swing.JTextField txtBookingIdStart;
     private javax.swing.JTextField txtDest;
+    private javax.swing.JTextArea txtDirectory;
     private javax.swing.JTextField txtFlightCarrier;
     private javax.swing.JTextField txtFlightNumber;
     private javax.swing.JTextField txtFlightTime;
