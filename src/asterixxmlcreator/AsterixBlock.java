@@ -50,9 +50,15 @@ public class AsterixBlock {
             String FlightCarrier,
             String FlightTime) {
         passengers = new ArrayList<>();
-        bookingId = BookingId;
-        toCode = Destination;
-        sourceMarket = SourceMarket;
+        
+        if (SourceMarket.equals("BE") || SourceMarket.equals("JE"))bookingId = "JET" + BookingId;
+        else bookingId = BookingId;
+        
+        if (SourceMarket.equals("BE") || SourceMarket.equals("JE")) toCode = "JET";
+        else toCode = Destination;
+        
+        if (SourceMarket.equals("BE")) sourceMarket = "JE";
+        else sourceMarket = SourceMarket;
         transferType = "D";
         destination = Destination;
         hotel = Ldi;

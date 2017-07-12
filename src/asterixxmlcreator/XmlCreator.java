@@ -45,7 +45,9 @@ public class XmlCreator {
         SimpleDateFormat creationDateFormat = new SimpleDateFormat("ddMMyyyy");
         SimpleDateFormat creationTimeFormat = new SimpleDateFormat("HHmm");
 
-        _fileName = SourceMarket + fileNameDate.format(new Date()) + "-001.xml";
+        if (SourceMarket.equals("BE") || SourceMarket.equals("JE")) _fileName = "JE" + fileNameDate.format(new Date()) + "-001.xml";
+        else _fileName = SourceMarket + fileNameDate.format(new Date()) + "-001.xml";
+        
         _creationDate = creationDateFormat.format(new Date());
         _creationTime = creationTimeFormat.format(new Date());
 
