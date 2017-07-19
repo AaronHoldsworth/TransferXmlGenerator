@@ -313,9 +313,9 @@ public class AsterixDetailsWindow extends javax.swing.JFrame {
                     SimpleDateFormat timeFormat = new SimpleDateFormat("HHmm");
 
                     String endDate = datepickEnd.getDate().format(dateFormat);
-                    
+
                     Date flightTimeFomat = timeFormat.parse(txtFlightTime.getText());
-                    
+
                     String flightTime = timeFormat.format(flightTimeFomat);
 
                     btnCreate.setEnabled(false);
@@ -345,6 +345,7 @@ public class AsterixDetailsWindow extends javax.swing.JFrame {
                     }
 
                     XmlCreator.CreateXml(asterixList, txtSourceMarket.getText(), txtDirectory.getText(), btnCreate, progFileCreation);
+                    
                 } catch (NumberFormatException | ParseException e) {
                     JOptionPane.showMessageDialog(null, e.getMessage(), "Exception Thrown", JOptionPane.ERROR_MESSAGE);
                 }
@@ -352,28 +353,24 @@ public class AsterixDetailsWindow extends javax.swing.JFrame {
 
             new Thread(r).start();
         }
-        int newBookingStart = Integer.parseInt(txtBookingIdStart.getText()) + Integer.parseInt(txtNumBookings.getText());
-        txtBookingIdStart.setText(Integer.toString(newBookingStart));
+
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void btnSaveLocationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveLocationActionPerformed
         JFileChooser directoryBrowser = new JFileChooser();
         directoryBrowser.setCurrentDirectory(new java.io.File(txtDirectory.getText()));
         directoryBrowser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        //
-        // disable the "All files" option.
-        //
         directoryBrowser.setAcceptAllFileFilterUsed(false);
-        //    
+
         if (directoryBrowser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
             txtDirectory.setText(directoryBrowser.getSelectedFile().toString());
         }
     }//GEN-LAST:event_btnSaveLocationActionPerformed
 
-/**
- * @param args the command line arguments
- */
-public static void main(String args[]) {
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -384,28 +381,24 @@ public static void main(String args[]) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                
 
-}
+                }
             }
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(AsterixDetailsWindow.class
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-} catch (InstantiationException ex) {
+        } catch (InstantiationException ex) {
             java.util.logging.Logger.getLogger(AsterixDetailsWindow.class
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-} catch (IllegalAccessException ex) {
+        } catch (IllegalAccessException ex) {
             java.util.logging.Logger.getLogger(AsterixDetailsWindow.class
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-} catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(AsterixDetailsWindow.class
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
